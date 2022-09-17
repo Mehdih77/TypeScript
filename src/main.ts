@@ -1,19 +1,10 @@
-class Invoice {
-  //   readonly client: string;
-  //   private details: string;
-  //   public amount: number;
+import { Invoice } from "./classes/Invoice.js";
 
-  constructor(
-    readonly client: string,
-    private details: string,
-    public amount: number
-  ) {}
+const invOne = new Invoice("mario", "work on the mario website", 250);
 
-  format() {
-    return `${this.client} owes $${this.amount} for ${this.details}`;
-  }
-}
+console.log(invOne);
 
+// invoices List
 const invoices: Invoice[] = [];
 
 invoices.forEach((inv) => {
@@ -31,5 +22,5 @@ const amount = document.querySelector("#amount") as HTMLInputElement;
 // button
 form.addEventListener("submit", (e: Event) => {
   e.preventDefault();
-  console.log(e);
+  console.log(type.value, tofrom.value, details.value, amount.valueAsNumber);
 });
